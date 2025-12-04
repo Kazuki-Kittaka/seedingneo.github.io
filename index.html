@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeedingNeo パソコン・プログラミング教室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+      
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Zen Maru Gothic', sans-serif;
+        cursor: none; /* Hide default cursor for the custom stalker */
+      }
+
+      /* Custom Animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-float-delayed {
+        animation: float 7s ease-in-out infinite 1s;
+      }
+      
+      @keyframes pop {
+        0% { transform: scale(0.9); opacity: 0; }
+        50% { transform: scale(1.1); opacity: 1; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .animate-pop {
+        animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      @keyframes wiggle {
+        0%, 100% { transform: rotate(-3deg); }
+        50% { transform: rotate(3deg); }
+      }
+      .animate-wiggle {
+        animation: wiggle 2s ease-in-out infinite;
+      }
+
+      /* Scrollbar hiding for cleaner UI */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Polka Dot Background */
+      .bg-dot-pattern {
+        background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      
+      .bg-dot-pattern-colored {
+        background-image: radial-gradient(#FF9F1C 2px, transparent 2px), radial-gradient(#2EC4B6 2px, transparent 2px);
+        background-size: 30px 30px, 30px 30px;
+        background-position: 0 0, 15px 15px;
+        opacity: 0.1;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'neo-orange': '#FF9F1C',
+              'neo-cyan': '#2EC4B6',
+              'neo-lime': '#CBF3F0',
+              'neo-lime-accent': '#C0E218',
+              'neo-pink': '#EF476F',
+              'neo-yellow': '#FFD166',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
